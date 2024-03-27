@@ -1,0 +1,78 @@
+
+
+public class Main {
+
+  public class TreeNode {
+
+     int val;
+
+     TreeNode left;
+
+     TreeNode right;
+
+     TreeNode() {}
+
+     TreeNode(int val) { this.val = val; }
+
+     TreeNode(int val, TreeNode left, TreeNode right) {
+
+         this.val = val;
+
+         this.left = left;
+
+         this.right = right;
+
+     }
+
+  }
+
+public TreeNode invertTree(TreeNode root)
+  {
+
+if (root == null)
+return null;
+
+TreeNode left= invertTree(root.left);
+
+TreeNode right = invertTree(root.right);
+  
+// swaps 
+
+    root.left= right;
+
+    root.right= left;
+
+    return root;
+  
+  }
+
+
+  public static void main(String[] args) {
+          // Create a binary tree 
+
+    Main main = new Main();
+          TreeNode root = main.new TreeNode(1);
+          root.left = main.new TreeNode(2);
+          root.right = main.new TreeNode(8);
+          root.left.left = main.new TreeNode(3);
+          root.left.right = main.new TreeNode(4);
+          root.right.left = main.new TreeNode(5);
+          root.right.right = main.new TreeNode(6);
+
+          // Invert the binary tree
+          root = main.invertTree(root);
+
+          // Output the inverted binary tree 
+          inorderTraversal(root);
+      }
+
+    
+      private static void inorderTraversal(TreeNode root) {
+          if (root == null) {
+              return;
+          }
+          inorderTraversal(root.left);
+          System.out.print(root.val + " ");
+          inorderTraversal(root.right);
+      }
+  }
