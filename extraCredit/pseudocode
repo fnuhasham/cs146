@@ -1,0 +1,49 @@
+Converting Adjacency List to Adjacency Matrix:
+
+pseudocode:
+
+function adjacencyListToMatrix(adjList):
+    n = length(adjList)
+    matrix = create n x n matrix filled with 0s
+    
+    for i from 0 to n-1:
+        for j in adjList[i]:
+            matrix[i][j] = 1
+    
+    return matrix
+
+    Explaination: I initialize a matrix of size n x n, where n is the number of vertices in the graph.
+                  Iterate over each vertex in the adjacency list.
+                  
+
+  Converting Adjacency Matrix to Adjacency List:
+  
+  Pseudocode:
+
+  function adjacencyMatrixToList(matrix):
+    n = number of rows in matrix
+    adjList = create empty list of size n
+    
+    for i from 0 to n-1:
+        adjList[i] = empty list
+        
+        for j from 0 to n-1:
+            if matrix[i][j] == 1:
+                adjList[i].append(j)
+    
+    return adjList
+
+
+    Reversing Edges in a Directed Graph:
+pseudocode: 
+function reverseEdges(adjList):
+    n = length(adjList)
+    reversedAdjList = create empty list of size n
+    
+    for i from 0 to n-1:
+        for j in adjList[i]:
+            reversedAdjList[j].append(i)
+    
+    return reversedAdjList
+
+    
