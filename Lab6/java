@@ -42,6 +42,6 @@ public class Solution {
         Solution solution = new Solution();
         int numCourses = 2;
         int[][] prerequisites = {{1, 0}};
-        System.out.println(solution.canFinish(numCourses, prerequisites));  // Output: true
+        System.out.println(solution.canFinish(numCourses, prerequisites)); 
     }
 }
