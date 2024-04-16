@@ -1,0 +1,5 @@
+ I create a graph to represent course dependencies and initialize an array to track the number of prerequisites for each course. 
+Then, I iterate over the prerequisites array to populate the graph and update the prerequisites count.
+Next, I use a queue to perform a topological sort, starting with courses that have no prerequisites. 
+For each course taken, I decrement the prerequisites count for its neighbors and add them to the queue if their prerequisites count becomes zero. 
+Finally, I return true if I can take all courses (the count equals the total number of courses); otherwise, I return false.
