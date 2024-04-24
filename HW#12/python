@@ -1,0 +1,43 @@
+class Solution:
+    def minCostToSupplyWater(self, n, wells, pipes):
+        all_pipes = []
+        for pipe in pipes:
+            all_pipes.append(pipe)
+        for i in range(len(wells)):
+            all_pipes.append([0, i + 1, wells[i]])
+
+        all_pipes.sort(key=lambda x: x[2])
+
+        parent = [-1] * (n + 1)
+
+        def find(x):
+            if parent[x] == -1:
+                return x
+            parent[x] = find(parent[x])
+            return parent[x]
+
+        total_cost = 0
+        for pipe in all_pipes:
+            house1, house2, cost = pipe[0], pipe[1], pipe[2]
+            parent1 = find(house1)
+            parent2 = find(house2)
+            if parent1 != parent2:
+                parent[parent1] = parent2
+                total_cost += cost
+
+        return total_cost
+
+
+def main():
+    n = 3
+    wells = [1, 2, 2]
+    pipes = [[1, 2, 1], [2, 3, 1]]
+
+    solution = Solution()
+    min_cost = solution.minCostToSupplyWater(n, wells, pipes)
+
+    print("Minimum total cost to supply water to all houses:", min_cost)
+
+
+if __name__ == "__main__":
+    main()
