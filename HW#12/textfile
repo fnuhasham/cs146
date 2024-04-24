@@ -1,0 +1,3 @@
+To solve this problem, combine the costs of wells and pipes into a list, sort the list by cost, and then use the Union Find algorithm to connect houses efficiently.
+We iterate through the sorted list of pipes, connecting houses if they are not already connected, and add the cost of the pipe to the total cost. 
+Finally, we return the total cost as the minimum cost to supply water to all houses.
