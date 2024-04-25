@@ -1,0 +1,68 @@
+import java.util.Collections;
+import java.util.PriorityQueue;
+
+// Using max heap as a priority queue
+class MaxHeapPriorityQueue {
+    private PriorityQueue<Integer> heap;
+
+    public MaxHeapPriorityQueue() {
+        this.heap = new PriorityQueue<>(Collections.reverseOrder());
+    }
+
+    public void insert(int element) {
+        heap.offer(element);
+    }
+
+    public int extractMax() {
+        return heap.poll();
+    }
+
+    public int peekMax() {
+        return heap.peek();
+    }
+}
+
+// Converting max heap to min heap
+class MaxHeapAsMin {
+    private PriorityQueue<Integer> heap;
+
+    public MaxHeapAsMin() {
+        this.heap = new PriorityQueue<>();
+    }
+
+    public void insert(int element) {
+        heap.offer(-element);
+    }
+
+    public int extractMin() {
+        return -heap.poll();
+    }
+
+    public int peekMin() {
+        return -heap.peek();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MaxHeapPriorityQueue maxHeapPriorityQueue = new MaxHeapPriorityQueue();
+        maxHeapPriorityQueue.insert(5);
+        maxHeapPriorityQueue.insert(3);
+        maxHeapPriorityQueue.insert(7);
+
+        System.out.println("Max Heap Priority Queue:");
+        System.out.println("Peek Max: " + maxHeapPriorityQueue.peekMax());
+        System.out.println("Extract Max: " + maxHeapPriorityQueue.extractMax());
+        System.out.println("Peek Max after extract: " + maxHeapPriorityQueue.peekMax());
+
+        MaxHeapAsMin maxHeapAsMin = new MaxHeapAsMin();
+        maxHeapAsMin.insert(5);
+        maxHeapAsMin.insert(3);
+        maxHeapAsMin.insert(7);
+
+        System.out.println("\nMax Heap as Min:");
+        System.out.println("Peek Min: " + maxHeapAsMin.peekMin());
+        System.out.println("Extract Min: " + maxHeapAsMin.extractMin());
+        System.out.println("Peek Min after extract: " + maxHeapAsMin.peekMin());
+    }
+}
