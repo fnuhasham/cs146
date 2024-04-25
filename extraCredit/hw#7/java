@@ -1,0 +1,20 @@
+import java.util.*;
+
+class Solution {
+    public int minNumberOfServers(int[][] intervals) {
+        PriorityQueue<Integer> servers = new PriorityQueue<>();
+        PriorityQueue<Integer> released = new PriorityQueue<>();
+        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
+        for (int[] interval : intervals) {
+            while (!released.isEmpty() && released.peek() <= interval[0]) {
+                servers.offer(released.poll());
+            }
+            if (!servers.isEmpty()) {
+                servers.poll();
+            } else {
+                released.offer(interval[1]);
+            }
+        }
+        return servers.size() + released.size();
+    }
+}
