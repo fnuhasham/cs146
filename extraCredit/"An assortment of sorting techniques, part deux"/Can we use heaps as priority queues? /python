@@ -1,0 +1,50 @@
+import heapq
+
+# Using max heap as a priority queue
+class MaxHeapPriorityQueue:
+    def __init__(self):
+        self.heap = []
+
+    def insert(self, element):
+        heapq.heappush(self.heap, -element)
+
+    def extract_max(self):
+        return -heapq.heappop(self.heap)
+
+    def peek_max(self):
+        return -self.heap[0]
+
+# Converting max heap to min heap
+class MaxHeapAsMin:
+    def __init__(self):
+        self.heap = []
+
+    def insert(self, element):
+        heapq.heappush(self.heap, -element)
+
+    def extract_min(self):
+        return -heapq.heappop(self.heap)
+
+    def peek_min(self):
+        return -self.heap[0]
+
+# Example usage
+max_heap_priority_queue = MaxHeapPriorityQueue()
+max_heap_priority_queue.insert(5)
+max_heap_priority_queue.insert(3)
+max_heap_priority_queue.insert(7)
+
+print("Max Heap Priority Queue:")
+print("Peek Max:", max_heap_priority_queue.peek_max())
+print("Extract Max:", max_heap_priority_queue.extract_max())
+print("Peek Max after extract:", max_heap_priority_queue.peek_max())
+
+max_heap_as_min = MaxHeapAsMin()
+max_heap_as_min.insert(5)
+max_heap_as_min.insert(3)
+max_heap_as_min.insert(7)
+
+print("\nMax Heap as Min:")
+print("Peek Min:", max_heap_as_min.peek_min())
+print("Extract Min:", max_heap_as_min.extract_min())
+print("Peek Min after extract:", max_heap_as_min.peek_min())
