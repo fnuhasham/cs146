@@ -1,0 +1,10 @@
+def is_anagram(s, t):
+    return sorted(s) == sorted(t)
+
+def main():
+    s = "anagram"
+    t = "nagaram"
+    print(is_anagram(s, t))  # Output: True
+
+if __name__ == "__main__":
+    main()
