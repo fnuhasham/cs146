@@ -1,0 +1,7 @@
+
+To solve the problem, we first sort the intervals based on their start times. 
+We then use two priority queues to keep track of available servers and servers that have finished their current job.
+We iterate through the sorted intervals, assigning jobs to servers and updating their availability accordingly.
+If no server is available, we increment the count of required servers. 
+The minimum number of servers required is the sum of the number of servers in use and the count of required servers. 
+The algorithm has a time complexity of O(n log n) due to sorting the intervals and processing them, and a space complexity of O(n) to store the intervals and priority queues.
