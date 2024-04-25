@@ -1,0 +1,4 @@
+The other measures of efficiency we might need to consider in a real-world setting include space complexity, scalability, robustness, maintainability and adaptability. 
+Linked lists are versatile data structures with strengths; they can change size easily, and adding or removing items is fast. However, they have limitations such as using more memory compared to some other structures, and requiring sequential access, meaning you have to look through one item at a time.
+
+
