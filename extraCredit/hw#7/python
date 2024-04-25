@@ -1,0 +1,13 @@
+class Solution:
+    def minNumberOfServers(self, intervals: List[List[int]]) -> int:
+        servers = []
+        released = []
+        intervals.sort(key=lambda x: x[0])
+        for interval in intervals:
+            while released and released[0] <= interval[0]:
+                heapq.heappush(servers, heapq.heappop(released))
+            if servers:
+                heapq.heappop(servers)
+            else:
+                heapq.heappush(released, interval[1])
+        return len(servers) + len(released)
