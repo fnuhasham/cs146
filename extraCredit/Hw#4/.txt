@@ -1,0 +1,15 @@
+Problem #1:
+
+Best case: in the best case the array is already sorted. The algorithm would need to check each element once and no element would be moved so the time complexity would be O(n). 
+
+Average case: In average case each element is compare to all previous element on average leading to approximately n/2 so in the average case the time complexity would be O(n^2)
+
+Worst Case: in worst case the array is sorted in reverse order. Each order needs to be reversed with all previous elements and may move to the begining od the array so the result approximately n^2/2. thus the time complexity is O(n^2)
+
+Problem #2: Matrix multiplication
+
+Best Case: The best case occurs when both matrices are small or have special structure which make the multioplication process faster. in the best case scenario we go through three nested loops to perform the multiplication os in the best case the time complexity is O(n^3)
+
+Average Case: So in the average case there is no assumption about input matrices so we expect algorithms to performs with its usual complexoty O(n^3)
+
+Worst Case: In the worst case when both the inputs matrices are large and require maximum computation so in this case the time complexity would be O(n^3)
