@@ -1,0 +1,11 @@
+MaxHeapPriorityQueue:
+    data = MaxHeap()
+
+    Insert(element):
+        data.Insert(element)
+
+    ExtractMax():
+        return data.ExtractMax()
+
+    PeekMax():
+        return data.Peek()
