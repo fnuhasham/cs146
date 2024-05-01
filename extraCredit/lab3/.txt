@@ -1,0 +1,23 @@
+Problem 1:
+
+10^10 n^2 vs n^3:
+ n^3 is greater because the n^3 go faster than the quadratic function .
+
+n2 log(n) vs n(log(n))10:
+is greater  n(log(n))^10 grow faster due to exponentiation
+
+n^logn vs 2^√n  :
+      2^√n   is greater than the n^logn because the exponential growth of 2^√n better than n^logn
+
+2^n vs 2^2n:
+2^2n is greater because exponent function with larger go faster than the smaller one
+
+Problem 2:
+Best Case: If n is a small prime number, the loop will only run a few times
+Worst Case: If n  is a large prime number, the loop will run until i = √n.
+Average case: The average case of complexity is O(√n)
+
+Time complexity of the function is:
+Best case: O(1)
+Worst case: O(√n)
+Average case: O(√n)
