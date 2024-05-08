@@ -1,0 +1,17 @@
+def coinChange(coins, amount):
+    # Initialize dp array with amount+1 as maximum value
+    dp = [amount + 1] * (amount + 1)
+    dp[0] = 0  # Base case: 0 coins needed to make 0 amount
+
+    # Iterate through each coin
+    for coin in coins:
+        # Update dp array for each amount from coin to amount
+        for i in range(coin, amount + 1):
+            dp[i] = min(dp[i], dp[i - coin] + 1)
+
+ 
+    return -1 if dp[amount] > amount else dp[amount]
+
+coins = [1, 2, 5]
+amount = 11
+print(coinChange(coins, amount))  # Output: 3 (1*5 + 3*2)
